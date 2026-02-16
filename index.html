@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenção Mecânica - Banner</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #1e3a5f;
+            color: #ffffff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            width: 100vw;
+        }
+
+        /* Banner Container */
+        .banner-container {
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            width: 100%;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2a4a75 50%, #36598b 100%);
+            border-radius: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 0;
+            box-shadow: none;
+        }
+
+        /* Animated Circles Background */
+        .circles-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0.4;
+        }
+
+        /* Circle/Gear Shapes */
+        .circle-gear {
+            position: absolute;
+            border-radius: 50%;
+            border-style: solid;
+        }
+
+        /* Adding visual markers to show rotation */
+        .circle-gear::before {
+            content: '';
+            position: absolute;
+            width: 20%;
+            height: 20%;
+            background: rgba(78, 205, 196, 0.5);
+            border-radius: 50%;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .circle-gear::after {
+            content: '';
+            position: absolute;
+            width: 15%;
+            height: 15%;
+            background: rgba(100, 220, 200, 0.6);
+            border-radius: 50%;
+            bottom: 15%;
+            right: 20%;
+        }
+
+        /* Large outer circle - left */
+        .circle-1 {
+            width: 280px;
+            height: 280px;
+            top: -80px;
+            left: 5%;
+            border-width: 3px;
+            border-color: rgba(78, 205, 196, 0.8);
+            box-shadow: 0 0 30px rgba(78, 205, 196, 0.3);
+        }
+
+        /* Large inner circle - left */
+        .circle-2 {
+            width: 180px;
+            height: 180px;
+            top: -30px;
+            left: 8.5%;
+            border-width: 2px;
+            border-color: rgba(100, 220, 200, 0.7);
+            box-shadow: 0 0 20px rgba(100, 220, 200, 0.3);
+        }
+
+        /* Medium circle - right top */
+        .circle-3 {
+            width: 250px;
+            height: 250px;
+            top: -60px;
+            right: 8%;
+            border-width: 3px;
+            border-color: rgba(78, 205, 196, 0.75);
+            box-shadow: 0 0 25px rgba(78, 205, 196, 0.3);
+        }
+
+        /* Medium inner circle - right top */
+        .circle-4 {
+            width: 160px;
+            height: 160px;
+            top: -15px;
+            right: 11%;
+            border-width: 2px;
+            border-color: rgba(100, 220, 200, 0.85);
+            box-shadow: 0 0 20px rgba(100, 220, 200, 0.4);
+        }
+
+        /* Small circle - right bottom */
+        .circle-5 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            right: 15%;
+            border-width: 2px;
+            border-color: rgba(78, 205, 196, 0.7);
+            box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+        }
+
+        /* Small inner circle - right bottom */
+        .circle-6 {
+            width: 130px;
+            height: 130px;
+            bottom: -15px;
+            right: 17.5%;
+            border-width: 2px;
+            border-color: rgba(100, 220, 200, 0.8);
+            box-shadow: 0 0 15px rgba(100, 220, 200, 0.3);
+        }
+
+        /* Additional decorative circles */
+        .circle-7 {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 40%;
+            border-width: 2px;
+            border-color: rgba(78, 205, 196, 0.6);
+            box-shadow: 0 0 18px rgba(78, 205, 196, 0.25);
+        }
+
+        .circle-8 {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 25%;
+            border-width: 1px;
+            border-color: rgba(100, 220, 200, 0.65);
+            box-shadow: 0 0 12px rgba(100, 220, 200, 0.25);
+        }
+
+        /* Rotation animations */
+        .circle-1 {
+            animation: rotateClockwise 40s linear infinite;
+        }
+
+        .circle-2 {
+            animation: rotateCounterClockwise 30s linear infinite;
+        }
+
+        .circle-3 {
+            animation: rotateClockwise 35s linear infinite;
+        }
+
+        .circle-4 {
+            animation: rotateCounterClockwise 25s linear infinite;
+        }
+
+        .circle-5 {
+            animation: rotateClockwise 45s linear infinite;
+        }
+
+        .circle-6 {
+            animation: rotateCounterClockwise 35s linear infinite;
+        }
+
+        .circle-7 {
+            animation: rotateClockwise 50s linear infinite;
+        }
+
+        .circle-8 {
+            animation: rotateCounterClockwise 40s linear infinite;
+        }
+
+        @keyframes rotateClockwise {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateCounterClockwise {
+            0% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Additional smoke layers */
+        .smoke-layer {
+            display: none;
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1200px;
+            padding: 2rem;
+        }
+
+        /* Hero Icon */
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 0.8rem;
+            box-shadow: 0 15px 50px rgba(255, 107, 107, 0.4);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hero Title */
+        .hero-title {
+            font-size: clamp(1.5rem, 5vw, 2.8rem);
+            font-weight: 900;
+            margin-bottom: 0.4rem;
+            background: linear-gradient(135deg, #fff, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: clamp(1px, 0.5vw, 3px);
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            word-wrap: break-word;
+            padding: 0 1rem;
+        }
+
+        /* Hero Subtitle */
+        .hero-subtitle {
+            font-size: clamp(0.75rem, 2vw, 1rem);
+            color: #b8b8b8;
+            margin-bottom: 1.2rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 1rem;
+            word-wrap: break-word;
+        }
+
+        /* Date Time Stats */
+        .datetime-stats {
+            display: flex;
+            justify-content: center;
+            gap: clamp(1rem, 4vw, 3rem);
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .datetime-item {
+            text-align: center;
+            min-width: clamp(70px, 15vw, 100px);
+        }
+
+        .datetime-number {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: #4ecdc4;
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .datetime-label {
+            font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-banner {
+                padding-top: 0;
+            }
+
+            .hero-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .datetime-stats {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-banner {
+                padding-top: 0;
+            }
+
+            .hero-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+            <!-- Animated Circles/Gears Background -->
+            <div class="circles-container">
+                <div class="circle-gear circle-1"></div>
+                <div class="circle-gear circle-2"></div>
+                <div class="circle-gear circle-3"></div>
+                <div class="circle-gear circle-4"></div>
+                <div class="circle-gear circle-5"></div>
+                <div class="circle-gear circle-6"></div>
+                <div class="circle-gear circle-7"></div>
+                <div class="circle-gear circle-8"></div>
+            </div>
+            <div class="smoke-layer"></div>
+
+            <!-- Icon -->
+            <div class="hero-icon">
+                <i class="fas fa-cog"></i>
+            </div>
+
+            <!-- Title -->
+            <h1 class="hero-title">Sistema Elétrica</h1>
+
+            <!-- Subtitle -->
+            <p class="hero-subtitle">Coordenador: Romulo Ferreira | Excelência em Precisão e Performance</p>
+
+            <!-- Date Time Stats -->
+            <div class="datetime-stats">
+                <div class="datetime-item">
+                    <span class="datetime-number" id="dia">15</span>
+                    <span class="datetime-label">Dia</span>
+                </div>
+                <div class="datetime-item">
+                    <span class="datetime-number" id="mes">02</span>
+                    <span class="datetime-label">Mês</span>
+                </div>
+                <div class="datetime-item">
+                    <span class="datetime-number" id="ano">2025</span>
+                    <span class="datetime-label">Ano</span>
+                </div>
+                <div class="datetime-item">
+                    <span class="datetime-number" id="hora">14:30</span>
+                    <span class="datetime-label">Hora</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Dia    
+            document.getElementById('dia').textContent = String(now.getDate()).padStart(2, '0');
+            
+            // Mês
+            document.getElementById('mes').textContent = String(now.getMonth() + 1).padStart(2, '0');
+            
+            // Ano
+            document.getElementById('ano').textContent = now.getFullYear();
+            
+            // Hora
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('hora').textContent = `${hours}:${minutes}`;
+        }
+
+        // Atualizar a cada segundo
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
